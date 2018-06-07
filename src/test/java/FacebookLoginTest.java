@@ -14,6 +14,18 @@ public class FacebookLoginTest extends TestBase
     public FacebookLoginTest(String browser) {
         super(browser);
     }
+    
+    
+     @Test
+    public  void facebookLoginCancel() throws InterruptedException{
+        driver.get(homePageURL);
+        Home home = new Home(driver);
+        home.openHomePage();
+        home.clickSignIn();
+        home.facebookLoginCancel();
+        Assert.assertEquals(driver.findElement(By.xpath(home.signInButton)).getText(), "Sign In / Register");
+
+    }
 
     @Test
     public  void facebookLoginSuccessful() throws InterruptedException {
@@ -36,16 +48,7 @@ public class FacebookLoginTest extends TestBase
 
     }
 
-    @Test
-    public  void facebookLoginCancel() throws InterruptedException{
-        driver.get(homePageURL);
-        Home home = new Home(driver);
-        home.openHomePage();
-        home.clickSignIn();
-        home.facebookLoginCancel();
-        Assert.assertEquals(driver.findElement(By.xpath(home.signInButton)).getText(), "Sign In / Register");
-
-    }
+   
 
 
 }

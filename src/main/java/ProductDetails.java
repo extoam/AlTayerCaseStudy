@@ -27,7 +27,7 @@ public class ProductDetails {
 
     }
 
-    private final long TIMEOUT = 70;
+    private final long TIMEOUT = 100;
 
     public void productDetailsIncreaseQuantity() throws InterruptedException{
         new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.presenceOfElementLocated(By.xpath(productQuantity)));

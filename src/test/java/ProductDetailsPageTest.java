@@ -16,7 +16,7 @@ public class ProductDetailsPageTest extends TestBase {
         super(browser);
     }
 
-    private final long TIMEOUT = 50;
+    private final long TIMEOUT = 100;
 
 
     @Test
@@ -55,26 +55,8 @@ public class ProductDetailsPageTest extends TestBase {
         String quantityValue = driver.findElement(By.xpath(productDetails.productQuantity)).getAttribute("value");
         Assert.assertEquals(10, quantityValue);
     }
-
-    @Test
-    public  void wishlistNotLoggedUser() throws InterruptedException{
-        String searchQuery = "Red Fox - Activity Toy";
-        driver.get(homePageURL);
-        Home home = new Home(driver);
-        home.openHomePage();
-        home.searchItemsSubmit(searchQuery);
-        home.openProductDetails(searchQuery);
-
-        ProductDetails productDetails = new ProductDetails(driver);
-
-        Assert.assertEquals(driver.findElement(By.xpath(productDetails.productWishMessage)).getText(), "ADD TO WISHLIST");
-        productDetails.clickFavoritesButton();
-        Thread.sleep(1000);
-        Assert.assertTrue(driver.findElements(By.xpath(home.signInModal)).size() > 0);
-
-    }
-
-    @Test
+       
+       @Test
     public void wishListLoggedUser() throws InterruptedException{
         driver.get(homePageURL);
         Home home = new Home(driver);
@@ -104,6 +86,25 @@ public class ProductDetailsPageTest extends TestBase {
         home.logout();
     }
 
+    @Test
+    public  void wishlistNotLoggedUser() throws InterruptedException{
+        String searchQuery = "Red Fox - Activity Toy";
+        driver.get(homePageURL);
+        Home home = new Home(driver);
+        home.openHomePage();
+        home.searchItemsSubmit(searchQuery);
+        home.openProductDetails(searchQuery);
+
+        ProductDetails productDetails = new ProductDetails(driver);
+
+        Assert.assertEquals(driver.findElement(By.xpath(productDetails.productWishMessage)).getText(), "ADD TO WISHLIST");
+        productDetails.clickFavoritesButton();
+        Thread.sleep(1000);
+        Assert.assertTrue(driver.findElements(By.xpath(home.signInModal)).size() > 0);
+
+    }
+
+    
     @Test
     public void productSeveralImages() throws InterruptedException{
         String searchQuery = "Urbo2 Pushchair - City Grey";

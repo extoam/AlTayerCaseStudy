@@ -15,7 +15,7 @@ public class Account {
 
     }
 
-    private final long TIMEOUT = 70;
+    private final long TIMEOUT = 100;
 
     public String getEmailContact(){
         new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.presenceOfElementLocated(By.xpath(userEmailField)));
