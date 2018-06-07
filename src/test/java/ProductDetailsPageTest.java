@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PDPageTest extends TestBase {
+public class ProductDetailsPageTest extends TestBase {
 
     public static final String fbEmail1 = "ktwxjgb_sharpeman_1465123980@tfbnw.net";
     public static final String fbEmail2 = "maioiik_smithwitz_1465123955@tfbnw.net";
@@ -12,7 +12,7 @@ public class PDPageTest extends TestBase {
     public static final String fbEmail4 = "open_reyhddn_user@tfbnw.net";
     public static final String fbPassword = "1234qwe";
 
-    public PDPageTest(String browser) {
+    public ProductDetailsPageTest(String browser) {
         super(browser);
     }
 

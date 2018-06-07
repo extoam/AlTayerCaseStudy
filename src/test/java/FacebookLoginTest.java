@@ -2,7 +2,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
-public class FBLoginTest1 extends TestBase
+public class FacebookLoginTest extends TestBase
 {
 
     public static final String fbEmail1 = "ktwxjgb_sharpeman_1465123980@tfbnw.net";
@@ -11,7 +11,7 @@ public class FBLoginTest1 extends TestBase
     public static final String fbEmail4 = "open_reyhddn_user@tfbnw.net";
     public static final String fbPassword = "1234qwe";
 
-    public FBLoginTest1(String browser) {
+    public FacebookLoginTest(String browser) {
         super(browser);
     }
 
