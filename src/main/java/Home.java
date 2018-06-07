@@ -82,7 +82,7 @@ public class Home {
 
 
     //private final long FBTIMEOUT = 40;
-    private final long TIMEOUT = 50;
+    private final long TIMEOUT = 70;
 
     public void facebookLogin(String email, String password) {
         new WebDriverWait(driver, TIMEOUT).until(ExpectedConditions.elementToBeClickable(By.xpath(facebookButton)));
